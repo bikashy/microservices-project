@@ -19,6 +19,7 @@ spring:
                 - Path=/api/v2/products/**
               filters:
                 - StripPrefix=2
+                - RedirectTo=302,https://google.com
 
             - id: order-service
 #              uri: http://localhost:9012
