@@ -16,13 +16,16 @@ spring:
 #              uri: http://localhost:9010
               uri: lb://INVENTORY-SERVICE
               predicates:
-                - Path=/api/v2/products/**
+                - Path=/api/v2/products/**,/api/v2/fetchOrder/**
               filters:
                 - StripPrefix=2
-                - RedirectTo=302,https://google.com
+#                - RedirectTo=302,https://google.com
 
             - id: order-service
 #              uri: http://localhost:9012
               uri: lb://ORDER-SERVICE
               predicates:
-                - Path=/api/v1/orders/**
+                - Path=/api/v1/**
+              filters:
+#                 - StripPrefix =2
+                - RewritePath=/api/v1/(?<segment>.*), /${segment}

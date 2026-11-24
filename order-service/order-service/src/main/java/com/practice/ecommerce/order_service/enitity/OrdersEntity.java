@@ -17,7 +17,7 @@ public class OrdersEntity {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    private Integer price;
+    private Double price;
 
     @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<OrderItems> orderItems;

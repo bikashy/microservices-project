@@ -12,6 +12,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
+@Data
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +22,6 @@ public class ProductEntity {
 
     private String title;
 
-    private String stocks;
+    private Integer stocks;
 
 }

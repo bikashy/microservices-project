@@ -11,8 +11,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDTO {
-    private Long id;
+//    private Long id;
     private List<OrderRequestItemDto> orderItems;
 
-    private Integer price;
+//    private Integer price;
 }
